@@ -1,0 +1,11 @@
+<%@page pageEncoding="UTF-8"%>
+        </main>
+        <footer class="pie">
+            <div class="contenedor">
+                <span><b>Sistema Académico</b> · Backend 2026</span>
+                <span class="pie-tecno">Jakarta EE 10 · JPA + EJB (Session Facade) · GlassFish · PostgreSQL</span>
+            </div>
+        </footer>
+        <script src="${ctx}/js/app.js"></script>
+    </body>
+</html>

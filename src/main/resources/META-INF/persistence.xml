@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="3.0" xmlns="https://jakarta.ee/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
-    <!-- Define Persistence Unit -->
-    <persistence-unit name="my_persistence_unit">
-        
+    <!-- Unidad de persistencia: GlassFish administra el EntityManager (JTA) y la conexión
+         sale del DataSource java:app/jdbc/bdalumnos (ver config/ConfiguracionBD.java) -->
+    <persistence-unit name="AppAlumnosPU" transaction-type="JTA">
+        <jta-data-source>java:app/jdbc/bdalumnos</jta-data-source>
+        <class>entidad.Alumno</class>
+        <class>entidad.Carrera</class>
+        <class>entidad.Docente</class>
+        <class>entidad.Examen</class>
+        <class>entidad.Facultad</class>
+        <class>entidad.Materia</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <properties/>
     </persistence-unit>
 </persistence>

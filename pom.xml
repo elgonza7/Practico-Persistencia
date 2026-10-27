@@ -36,16 +36,18 @@
             <version>42.7.2</version>
         </dependency>
 
-        <!-- JSTL para Jakarta EE 10 -->
+        <!-- JSTL para Jakarta EE 10 (GlassFish ya lo incluye) -->
         <dependency>
             <groupId>jakarta.servlet.jsp.jstl</groupId>
             <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
             <version>3.0.0</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.glassfish.web</groupId>
             <artifactId>jakarta.servlet.jsp.jstl</artifactId>
             <version>3.0.1</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
     <build>

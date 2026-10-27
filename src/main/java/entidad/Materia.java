@@ -42,8 +42,8 @@ public class Materia implements Serializable {
     private Integer idmateria;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 10)
-    @Column(name = "nombre", nullable = false, length = 10)
+    @Size(min = 1, max = 100)
+    @Column(name = "nombre", nullable = false, length = 100)
     private String nombre;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "materia")
     private Collection<Examen> examenCollection;

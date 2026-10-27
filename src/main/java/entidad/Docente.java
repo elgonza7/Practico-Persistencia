@@ -26,16 +26,16 @@ public class Docente implements Serializable {
     private Integer iddocente;
 
     @Basic(optional = false)
-    @Column(name = "nombre")
+    @Column(name = "nombre", nullable = false, length = 100)
     private String nombre;
 
-    @Basic(optional = false)
-    @Column(name = "cargo")
+    // TITULAR, ADJUNTO o JTP (CHECK en la BD); puede ser nulo
+    @Column(name = "cargo", length = 20)
     private String cargo;
 
     @JoinTable(name = "docente_materia", joinColumns = {
-        @JoinColumn(name = "docente_iddocente", referencedColumnName = "iddocente")}, inverseJoinColumns = {
-        @JoinColumn(name = "materia_idmateria", referencedColumnName = "idmateria")})
+        @JoinColumn(name = "docente_id", referencedColumnName = "iddocente")}, inverseJoinColumns = {
+        @JoinColumn(name = "materia_id", referencedColumnName = "idmateria")})
     @ManyToMany
     private Collection<Materia> materiaCollection;
 
